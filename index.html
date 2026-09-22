@@ -339,6 +339,42 @@ document.addEventListener("click",e=>{
   burstHearts(e.clientX,e.clientY);
 });
 </script>
+<!-- Sister Song -->
+<audio id="sisterSong" loop preload="auto">
+  <source src="sister-song.mp3" type="audio/mpeg">
+</audio>
 
+<button id="songBtn" onclick="toggleSisterSong()"
+style="
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:9999;
+border:0;
+border-radius:999px;
+padding:14px 20px;
+background:linear-gradient(135deg,#7ddcff,#238cff);
+color:#031326;
+font-weight:800;
+font-size:15px;
+box-shadow:0 8px 25px #0005;
+">
+🎵 Play Sister Song
+</button>
+
+<script>
+const sisterSong = document.getElementById("sisterSong");
+const songBtn = document.getElementById("songBtn");
+
+function toggleSisterSong(){
+  if(sisterSong.paused){
+    sisterSong.play();
+    songBtn.innerHTML = "⏸️ Pause Sister Song";
+  }else{
+    sisterSong.pause();
+    songBtn.innerHTML = "🎵 Play Sister Song";
+  }
+}
+</script>
 </body>
 </html>
